@@ -1,0 +1,72 @@
+<% include partials/header.ejs %>
+
+<div class="container">
+    <br>
+    <h2 style="text-align:center">Gezinizi Anlatın</h2>
+    <br>
+    <form action="/paylas" enctype="multipart/form-data" method="POST" >
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="tripPhoto">Gezinizden bir fotoğraf bırakın.</label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="tripPhoto" name="image">
+                    <label class="custom-file-label" for="customFile"></label>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="tripType">Gezi türünüzü seçin.</label>
+                <select id="tripType" class="form-control" name="type">
+                <option >Yaz Tatili</option>
+                <option>Kış Tatili</option>
+                <option>Kültürel Gezi</option>
+                <option>Doğa Tatili</option>
+                <option>Diğer</option>
+                </select>
+            </div>    
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="tripCountry">Hangi ülkeye gittiniz?</label>
+            <input type="text" class="form-control" id="tripCountry" placeholder="" name="country">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="tripCity">Hangi şehri?</label>
+            <input type="text" class="form-control" id="tripCity" placeholder="" name="city">
+          </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="datepicker" >Gezinizin başlangıç tarihi</label>
+                <input type="date" class="form-control" id="datepicker" name="startdate">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="tripDuration">Geziniz ne kadar sürdü?</label>
+                <select id="tripDuration" class="form-control" name="duration">
+                <option>1-3 Gün</option>
+                <option>3-7 Gün</option>
+                <option>1-2 Hafta</option>
+                <option>2-4 Hafta</option>
+                <option>1-3 Ay</option>
+                <option>3-6 Ay</option>
+                <option>6-12 Ay</option>
+                <option>1 Yıldan fazla</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+          <label for="tripSummary">Gezinizi bir cümleyle özetleyin. (Ana sayfadaki kartlarda gözükür)</label>
+          <input type="text" class="form-control" id="tripSummary" placeholder="" name="summary">
+        </div>
+        <div class="form-group">
+            <label for="tripArticle">Gezinizi uzun uzun anlatın, tavsiyeler verin.</label>
+            <textarea cols="40" rows="5" class="form-control" id="tripArticle" placeholder="" name="article"></textarea>
+        </div>
+    
+        <div class="form-group" style="text-align:center">
+        <button type="submit" class="btn btn-primary">Paylaş</button>
+        </div>
+    </form>
+</div>
+
+
+<% include partials/footer.ejs %>
