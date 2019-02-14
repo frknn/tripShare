@@ -101,12 +101,6 @@ app.get("/rengarenk.ejs",isLoggedIn,function(req,res)
     res.render("rengarenk.ejs");
 });
 
-app.get("/dom.ejs",isLoggedIn,function(req,res)
-{
-    res.render("dom.ejs");
-});
-
-
 
 //Kaydol route
 app.get("/kaydol.ejs",function(res,res){
