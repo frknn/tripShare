@@ -1,0 +1,34 @@
+<% include partials/header.ejs %>
+
+<header class="masthead" style="background-image: url('/images/<%= foundBlog.tripImage %>')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="post-heading">
+            <h1><%= foundBlog.tripCountry %> / <%= foundBlog.tripCity %></h1>
+            <h2 class="subheading"> <%= foundBlog.tripSummary %> </h2>
+            <span class="meta">Posted by
+                <a href="#">Start Bootstrap</a>
+                 on <%= foundBlog.postDate %></span>
+                 <br><br>
+            <p><strong>Gezi Türü:</strong> <%= foundBlog.tripType %> </p>
+            <p><strong>Gezi Başlangıç Tarihi:</strong> <%= foundBlog.tripDate %> </p>
+            <p><strong>Gezi Uzunluğu:</strong> <%= foundBlog.tripDuration %> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <article>
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-md-10 mx-auto">
+                <p><%= foundBlog.tripArticle %></p>
+              </div>
+          </div>
+      </div>
+  </article>
+
+<% include partials/footer.ejs %>

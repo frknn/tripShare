@@ -50,6 +50,19 @@ router.post("/paylas",upload.single('image'),function(req,res){
     });
 });
 
+router.get("/blogs/:blogId", function(req,res){
+    Post.findById(req.params.blogId,function(err,foundBlog){
+        if(err){
+            console.log("-------------ERROR-------------");
+            console.log(err);
+        }else{
+            console.log("-------------FOUND BLOGS-------------");
+            console.log(foundBlog);
+            res.render("blog.ejs",{foundBlog:foundBlog});
+        }
+    });
+});
+
 //middleware func. that controls if a user is authenticated
 function isLoggedIn(req,res,next){
     if(req.isAuthenticated()){
