@@ -21,8 +21,8 @@
         <div class="row">
             <% foundPosts.forEach((post)=>{ %>
             <div class="col-xl-4" style="padding: 10px">
-                <div class="card text-center mx-auto" style="width: 350px; background:#cbb5ff">
-                    <img class="card-img-top img-fluid mx-auto" src="/images/<%= post.tripImage %>" alt="blog images" style="width:100%">
+                <div class="card text-center mx-auto" style="width: 370px; background:#cbb5ff">
+                    <img class="card-img-top img-fluid mx-auto" src="/images/<%= post.tripImage %>" alt="blog images" style="width:100%; height: 200px;">
                     <div class="card-body">
                         <h3 class="card-title"><%= post.tripCountry %> / <%= post.tripCity %></h3>
                         <p class="card-text"><%= post.tripSummary %></p>
