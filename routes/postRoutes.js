@@ -1,5 +1,6 @@
 var express = require("express");
 var Post = require("../models/post");
+var User = require("../models/user");
 var router = express.Router();
 var multer = require("multer");
 
@@ -35,7 +36,9 @@ router.post("/paylas",upload.single('image'),function(req,res){
         tripDate: req.body.startdate,
         tripDuration: req.body.duration,
         tripSummary: req.body.summary,
-        tripArticle: req.body.article
+        tripArticle: req.body.article,
+        ownerID: req.user._id,
+        ownerMail: req.user.username
     });
 
     newPost.save(function(err,newPost){
@@ -58,7 +61,7 @@ router.get("/blogs/:blogId", function(req,res){
         }else{
             console.log("-------------FOUND BLOGS-------------");
             console.log(foundBlog);
-            res.render("blog.ejs",{foundBlog:foundBlog});
+            res.render("blogs/blog.ejs",{foundBlog:foundBlog});
         }
     });
 });

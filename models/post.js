@@ -9,7 +9,9 @@ var postSchema = new mongoose.Schema({
     tripDuration:   {type: String,  required: "Cannot be empty"},
     tripSummary:    {type: String,  required: "Cannot be empty"},
     tripArticle:    {type: String,  required: "Cannot be empty"},
-    postDate:       {type: Date,    default: Date.now}
+    postDate:       {type: Date,    default: Date.now},
+    ownerID:        {type: String,  required: "Cannot be empty"},
+    ownerMail:      {type: String,  required: "Cannot be empty"}
 });
 
 module.exports = mongoose.model("Post",postSchema);
