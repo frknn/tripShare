@@ -34,6 +34,11 @@
       </ul>
       <% if(currentUser){ %>
         <ul class="navbar-nav ml-auto">
+            <% if(currentUser.isAdmin == true){ %>
+              <li class="nav-item">
+                  <a class="nav-link btn btn-primary" style="color:black" href="/adminpage">Admin İşlemleri</a>
+              </li>
+            <%} %>
           <li class="nav-item">
             <label for="currentusername" class="nav-link"><%=currentUser.username%> olarak giriş yapıldı.</label>
           </li>

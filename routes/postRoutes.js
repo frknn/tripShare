@@ -53,6 +53,7 @@ router.post("/paylas",upload.single('image'),function(req,res){
     });
 });
 
+//router that gets blog id and passed them into blog page
 router.get("/blogs/:blogId", function(req,res){
     Post.findById(req.params.blogId,function(err,foundBlog){
         if(err){

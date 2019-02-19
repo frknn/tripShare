@@ -41,6 +41,9 @@
               </div>
           </div>
       </div>
+      <% if(currentUser && currentUser.isAdmin == true) { %>
+      <a href="/onayla/<%= foundBlog._id %>" class="btn btn-success" style="margin-left:46%">ONAYLA</a>
+      <% } %>
   </article>
 
 <% include ../partials/footer.ejs %>

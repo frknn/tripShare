@@ -33,6 +33,37 @@ router.get("/giris.ejs",function(req,res){
     }
 });
 
+//admin page
+router.get("/adminpage",function(req,res){
+    if(req.isAuthenticated() && req.user.isAdmin == true){
+        Post.find({},function(err,foundPosts){
+            if(err){
+                console.log("-------------ERROR-------------");
+                console.log(err);
+            }else{
+                console.log("-------------ALL BLOGS-------------");
+                console.log(foundPosts);
+                res.render("admin.ejs",{foundPosts:foundPosts});
+            }
+        });
+    }else{
+        res.redirect("/");
+    }
+});
+
+//admin approval
+router.get("/onayla/:blogId",function(req,res){
+    Post.findByIdAndUpdate(req.params.blogId,{$set:{"isConfirmed":true}},function(err){
+        if(err){
+            console.log("-------------ERROR-------------");
+            console.log(err);
+        }else{
+            console.log("-------------BLOG ONAYLANDI-------------");
+            res.redirect("/adminpage");
+        }
+    })
+});
+
 //processes the sign in request with passport.authenticate
 //redirects homepage if it is successful
 router.post("/giris", passport.authenticate("local",{
