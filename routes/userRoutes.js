@@ -61,8 +61,30 @@ router.get("/onayla/:blogId",function(req,res){
             console.log("-------------BLOG ONAYLANDI-------------");
             res.redirect("/adminpage");
         }
-    })
+    });
 });
+
+var uid = "";
+//user profile 
+router.get("/users/:postOwner",function(req,res){
+    uid = req.params.postOwner;
+    Post.find({"ownerID":req.params.postOwner},function(err,foundUserPosts)
+    {
+        if(err){
+            console.log("-------------ERROR-------------");
+            console.log(err); 
+        }else{
+            if(foundUserPosts.length == 0){
+                res.redirect("/");
+            }else{
+                console.log("-------------PROFILE GIDILIYOR-------------");
+                res.render("userprofile.ejs",{foundUserPosts:foundUserPosts});
+            }
+             
+        }
+    });
+});
+
 
 //processes the sign in request with passport.authenticate
 //redirects homepage if it is successful

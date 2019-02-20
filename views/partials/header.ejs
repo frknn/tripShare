@@ -40,7 +40,7 @@
               </li>
             <%} %>
           <li class="nav-item">
-            <label for="currentusername" class="nav-link"><%=currentUser.username%> olarak giriş yapıldı.</label>
+            <a href="/users/<%= currentUser._id %>" ><label for="currentusername" class="nav-link"><%=currentUser.username%> olarak giriş yapıldı.</label></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/cikis">Çıkış Yap</a>
