@@ -15,7 +15,7 @@ var postRoutes = require("./routes/postRoutes");
 var userRoutes = require("./routes/userRoutes");
 
 //MongoDB server connection
-mongoose.connect("mongodb://localhost/expressUserDB",{useNewUrlParser:true});
+mongoose.connect("mongodb://frknn:05452143188Xx@tripsharecluster-shard-00-00-0knnd.mongodb.net:27017,tripsharecluster-shard-00-01-0knnd.mongodb.net:27017,tripsharecluster-shard-00-02-0knnd.mongodb.net:27017/test?ssl=true&replicaSet=tripShareCluster-shard-0&authSource=admin&retryWrites=true",{useNewUrlParser:true});
 
 //body-parser boilerplate
 app.use(bp.urlencoded({extended:true}));

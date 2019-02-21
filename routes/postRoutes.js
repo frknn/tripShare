@@ -67,6 +67,18 @@ router.get("/blogs/:blogId", function(req,res){
     });
 });
 
+router.get("/delete/:deleteId",function(req,res){
+    Post.findByIdAndDelete(req.params.deleteId,function(err){
+        if(err){
+            console.log("-------------DELETION ERROR-------------");
+            console.log(err);
+        }else{
+            console.log("-------------BLOG SILINDI-------------");
+            res.redirect(`/users/${req.user._id}`);
+        }
+    });
+});
+
 //middleware func. that controls if a user is authenticated
 function isLoggedIn(req,res,next){
     if(req.isAuthenticated()){

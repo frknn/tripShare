@@ -17,6 +17,11 @@
                     <p class="card-text"><%= post.tripSummary %></p>
                     <p> <small> Posted by <a href="/users/<%= post.ownerID %>"> <%= post.ownerMail %></a></small></p>
                     <a href="/blogs/<%= post._id %>" class="btn btn-primary">Görüntüle</a>
+                    <% if(currentUser) { %>
+                    <% if(currentUser._id == foundUserPosts[0].ownerID) { %>
+                        <a href="/delete/<%= post._id %>" class="btn btn-danger">SİL</a> 
+                    <% } %>
+                    <% } %>
                 </div>
             </div>
         </div>
