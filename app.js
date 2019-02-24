@@ -55,7 +55,12 @@ app.get("*", function(req, res)
 });
 
 //creating server
-var server = app.listen(5000,function()
-{
-    console.log(`Server is up at port ${server.address().port}.`);
+// var server = app.listen(5000,function()
+// {
+//     console.log(`Server is up at port ${server.address().port}.`);
+// });
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
 });
