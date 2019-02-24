@@ -2,7 +2,7 @@
 
     <div class="jumbotron text-center">
         <h1>TRIPSHARE</h1>
-        <p>Unutulmaz gezi anılarınızı paylaşın, tavsiyeler verin!</p>
+        <p>Share your awesome trip memories, give advices to others!</p>
     </div>
     <div class = "container">
         <div class="row">
@@ -15,7 +15,7 @@
                         <h3 class="card-title"><%= post.tripCountry %> / <%= post.tripCity %></h3>
                         <p class="card-text"><%= post.tripSummary %></p>
                         <p> <small> Posted by <a href="/users/<%= post.ownerID %>"> <%= post.ownerMail %></a></small></p>
-                        <a href="/blogs/<%= post._id %>" class="btn btn-primary">Görüntüle</a>
+                        <a href="/blogs/<%= post._id %>" class="btn btn-primary">View Blog</a>
                     </div>
                 </div>
             </div>

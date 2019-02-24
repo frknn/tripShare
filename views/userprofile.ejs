@@ -2,8 +2,8 @@
 
 <div class="jumbotron text-center">
     <h1>TRIPSHARE</h1>
-    <p>Unutulmaz gezi anılarınızı paylaşın, tavsiyeler verin!</p>
-    <p><%= foundUserPosts[0].ownerMail %>'s Profile</p>
+    <p>Share your awesome trip memories, give advices to others!</p>
+    <h5><%= foundUserPosts[0].ownerMail %>'s Profile</h5>
 </div>
 <div class = "container">
     <div class="row">
@@ -16,11 +16,11 @@
                     <h3 class="card-title"><%= post.tripCountry %> / <%= post.tripCity %></h3>
                     <p class="card-text"><%= post.tripSummary %></p>
                     <p> <small> Posted by <a href="/users/<%= post.ownerID %>"> <%= post.ownerMail %></a></small></p>
-                    <a href="/blogs/<%= post._id %>" class="btn btn-primary">Görüntüle</a>
+                    <a href="/blogs/<%= post._id %>" class="btn btn-primary">View Blog</a>
                     <% if(currentUser) { %>
                     <% if(currentUser._id == foundUserPosts[0].ownerID) { %>
-                        <a href="/delete/<%= post._id %>" class="btn btn-danger">SİL</a>
-                        <a href="/update/<%= post._id %>" class="btn btn-success">GÜNCELLE</a>
+                        <a href="/delete/<%= post._id %>" class="btn btn-danger">Delete</a>
+                        <a href="/update/<%= post._id %>" class="btn btn-success">Update</a>
                     <% } %>
                     <% } %>
                 </div>

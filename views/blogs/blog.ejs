@@ -24,9 +24,9 @@
                 <small><%= foundBlog.ownerMail %></small>
                  on <%= foundBlog.postDate %></span>
                  <br><br><br>
-            <p><strong>Gezi Türü:</strong> <%= foundBlog.tripType %> </p>
-            <p><strong>Gezi Başlangıç Tarihi:</strong> <%= foundBlog.tripDate %> </p>
-            <p><strong>Gezi Uzunluğu:</strong> <%= foundBlog.tripDuration %> </p>
+            <p><strong>Trip Type:</strong> <%= foundBlog.tripType %> </p>
+            <p><strong>Start Date:</strong> <%= foundBlog.tripDate %> </p>
+            <p><strong>Trip Duration:</strong> <%= foundBlog.tripDuration %> </p>
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@
           </div>
       </div>
       <% if(currentUser && currentUser.isAdmin == true) { %>
-      <a href="/onayla/<%= foundBlog._id %>" class="btn btn-success" style="margin-left:46%">ONAYLA</a>
+      <a href="/onayla/<%= foundBlog._id %>" class="btn btn-success" style="margin-left:46%">Approve</a>
       <% } %>
   </article>
 

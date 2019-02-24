@@ -5,68 +5,68 @@
 
 <div class="container">
     <br>
-    <h2 style="text-align:center">UPDATE YOUR POST</h2>
+    <h2 style="text-align:center">Update Your Blog</h2>
     <br>
     <form action="/updated/<%= foundBlog._id %>" enctype="multipart/form-data" method="POST">
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="tripPhoto">Gezinizden fotoğrafınızı güncelleyin. <small>(Şu anlık devre dışı)</small></label>
+                <label for="tripPhoto">Update your trip photo.<small>(Currently inactive)</small></label>
                 <div class="custom-file">
                     <input type="file" class="custom-file-input" id="tripPhoto" name="image" disabled>
                     <label class="custom-file-label" for="customFile"></label>
                 </div>
             </div>
             <div class="form-group col-md-6">
-                <label for="tripType">Gezi türünüzü güncelleyin.</label>
+                <label for="tripType">Update your trip type.</label>
                 <select id="tripType" class="form-control" name="type">
-                <option value="Yaz Tatili">Yaz Tatili</option>
-                <option value="Kış Tatili">Kış Tatili</option>
-                <option value="Kültürel Gezi">Kültürel Gezi</option>
-                <option value="Doğa Tatili">Doğa Tatili</option>
-                <option value="Diğer">Diğer</option>
+                <option value="Summer Holiday">Summer Holiday</option>
+                <option value="Winter Holiday">Winter Holiday</option>
+                <option value="Cultural Trip">Cultural Trip</option>
+                <option value="Nature Trip">Nature Trip</option>
+                <option value="Other">Other</option>
                 </select>
             </div>    
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="tripCountry">Hangi ülkeye gittiğinizi güncelleyin.</label>
+            <label for="tripCountry">Update your country.</label>
             <input type="text" class="form-control" id="tripCountry" placeholder="" name="country" value="<%= foundBlog.tripCountry %>">
           </div>
           <div class="form-group col-md-6">
-            <label for="tripCity">Şehri güncelleyin.</label>
+            <label for="tripCity">Update City.</label>
             <input type="text" class="form-control" id="tripCity" placeholder="" name="city" value="<%= foundBlog.tripCity %>">
           </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="datepicker" >Gezinizin başlangıç tarihini güncelleyin. <small>(Şu anlık devre dışı)</small></label>
+                <label for="datepicker" >Update start date.<small>(Currently inactive)</small></label>
                 <input type="date" class="form-control" id="datepicker" name="startdate" disabled>
             </div>
             <div class="form-group col-md-6">
-                <label for="tripDuration">Gezinizin süresini güncelleyin.</label>
+                <label for="tripDuration">Update the duration of your trip.</label>
                 <select id="tripDuration" class="form-control" name="duration">
-                <option>1-3 Gün</option>
-                <option>3-7 Gün</option>
-                <option>1-2 Hafta</option>
-                <option>2-4 Hafta</option>
-                <option>1-3 Ay</option>
-                <option>3-6 Ay</option>
-                <option>6-12 Ay</option>
-                <option>1 Yıldan fazla</option>
+                <option>1-3 Days</option>
+                <option>3-7 Days</option>
+                <option>1-2 Weeks</option>
+                <option>2-4 Weeks</option>
+                <option>1-3 Mounths</option>
+                <option>3-6 Mounths</option>
+                <option>6-12 Mounths</option>
+                <option>1+ Year</option>
                 </select>
             </div>
         </div>
         <div class="form-group">
-          <label for="tripSummary">Gezi özetinizi güncelleyin. (Ana sayfadaki kartlarda gözükür)</label>
+          <label for="tripSummary">Update your summarize sentence. (It will appear on the cards on the main page.)</label>
           <input type="text" class="form-control" id="tripSummary" placeholder="" name="summary" value="<%= foundBlog.tripSummary %>">
         </div>
         <div class="form-group">
-            <label for="editor">Gezi yazınızı güncelleyin.</label>
+            <label for="editor">Update your blog.</label>
             <textarea class="form-control" id="editor" name="content"><%- foundBlog.tripArticle %></textarea>
         </div>
     
         <div class="form-group" style="text-align:center">
-        <button type="submit" class="btn btn-success">GÜNCELLE</button>
+        <button type="submit" class="btn btn-success">Update</button>
         </div>
     </form>
 </div>
