@@ -41,7 +41,7 @@ router.post("/paylas",upload.single('image'),function(req,res){
         tripDate: req.body.startdate,
         tripDuration: req.body.duration,
         tripSummary: req.body.summary,
-        tripArticle: req.body.article,
+        tripArticle: req.body.content,
         ownerID: req.user._id,
         ownerMail: req.user.username
     });
@@ -110,7 +110,7 @@ router.post("/updated/:updateReq",upload.none(),function(req,res){
             tripCity       : req.body.city,
             tripDuration   : req.body.duration,
             tripSummary    : req.body.summary,
-            tripArticle    : req.body.article
+            tripArticle    : req.body.content
         },
     function(err){
         if(err){

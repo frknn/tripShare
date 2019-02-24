@@ -1,4 +1,7 @@
 <% include partials/header.ejs %>
+<header>
+    <script src="https://cdn.ckeditor.com/ckeditor5/11.2.0/classic/ckeditor.js"></script>
+</header>
 
 <div class="container">
     <br>
@@ -58,8 +61,8 @@
           <input type="text" class="form-control" id="tripSummary" placeholder="" name="summary" value="<%= foundBlog.tripSummary %>">
         </div>
         <div class="form-group">
-            <label for="tripArticle">Gezi yazınızı güncelleyin.</label>
-            <textarea cols="40" rows="5" class="form-control" id="tripArticle" placeholder="" name="article"><%= foundBlog.tripArticle %></textarea>
+            <label for="editor">Gezi yazınızı güncelleyin.</label>
+            <textarea class="form-control" id="editor" name="content"><%- foundBlog.tripArticle %></textarea>
         </div>
     
         <div class="form-group" style="text-align:center">
@@ -75,6 +78,11 @@
     var durationType = document.getElementById('durationPasser').innerHTML;
     document.getElementById('tripType').value = postType;
     document.getElementById('tripDuration').value = durationType;
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
 </script>
 
 <% include partials/footer.ejs %>
