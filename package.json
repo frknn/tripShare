@@ -4,6 +4,7 @@
   "description": "A website project for people to share their trip memories and advices.",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
